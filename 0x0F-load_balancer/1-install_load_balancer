@@ -3,7 +3,6 @@
 #+    Enables management via the init script.
 #+    Distributes requests using a round-robin algorithm.
 
-printf %s "
 balancer="\
 frontend haproxy_balancer
         bind *:80
@@ -13,7 +12,7 @@ backend webservers
         balance roundrobin
         server 166567-web-01 100.24.253.35 check
         server 166567-web-02 54.165.232.249 check
-""
+"
 
 # Update packages
 apt-get -y update
